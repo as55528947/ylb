@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: micr-web
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  redis:
+    host: localhost
+    port: 6379
+server:
+  port: 7100
+  servlet:
+    context-path: /api
+    encoding:
+      enabled: true
+      charset: UTF-8
+      force: true
+
+#dubbo配置
+dubbo:
+  registry:
+    address: zookeeper://localhost:2181
+  scan:
+    base-packages: com.bjpowernode.front
+  consumer:
+    check: false
+    timeout: 50000
+    retries: 0
+
+#短信配置
+jdwx:
+  sms:
+    url: https://way.jd.com/chuangxin/dxjk
+    appkey: 6dc5a2495dfb1b750f74e02d4f830507
+    content: 【利盈宝】你的验证码是：%s，3分钟内有效！请勿泄露他人
+    loginText: 【利盈宝】登录验证码是：%s，3分钟内有效！请勿泄露他人
+  realname:
+    url: https://way.jd.com/youhuoBeijing/test
+    appkey: 6dc5a2495dfb1b750f74e02d4f830507
+
+jwt:
+  secret: 3cab490478e34389842cbfb443aa9797
