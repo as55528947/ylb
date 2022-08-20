@@ -14,6 +14,7 @@ public class MicrDataserviceApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MicrDataserviceApplication.class, args);
+		System.out.println("zz");
 	}
 
 }
